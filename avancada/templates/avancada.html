@@ -1,0 +1,57 @@
+<h1>Calculadiora Avançada</h1>
+
+<form action="{% url 'avancada' %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <label for="nome"><b>Nome</b></label>
+            <input id="nome" type="text" class="form-control" name="nome" required>
+            </div>
+        <div class="col-12 col-lg-12">
+        <label for="desnivel"><b>Desnível</b></label>
+            <input type="number" id="desnivel" step="0.1" class="form-control" name="desnivel" required>
+        </div>
+        <div class="col-12 col-lg-12">
+            <label for="vazao"><b>Vazão</b></label>
+            <input type="number" id="vazao" step="0.1" class="form-control" name="vazao" required>
+        </div>
+            <div class="col-12 col-lg-12">
+            <label for="dist_hidr"><b>Distância Hidráulica (Tubulação em metros):</b></label>
+            <input id="dist_hidr" type="number" step="0.1" class="form-control" name="dist_hidr" required>
+        </div>
+        </div>
+            <div class="col-12 col-lg-12">
+            <label for="dist_eletrica"><b>Distância Elétrica (Cabos em metros):</b></label>
+            <input id="dist_eletrica" type="number" step="0.1" class="form-control" name="dist_eletrica" required>
+        </div>
+        </div>
+    </div>
+    <fieldset>
+        <legend>Modelo:</legend>
+        <div>
+            <input type="radio" name="modelo" value="220">
+            <label>On Grid (Conectada a rede)</label>
+        </div>
+        <div>
+            <input type="radio" name="modelo" value="130">
+            <label>Off Grid (Desconectada da rede)</label>
+        </div>        
+    </fieldset>
+    <fieldset>
+        <legend>Tipo do Cabo:</legend>
+        <div>
+            <input type="radio" id="1" name="tipo_cabo" value="0.0282">
+            <label>Alumínio</label>
+        </div>
+        <div>
+            <input type="radio" id="1" name="tipo_cabo" value="0.0172">
+            <label>Cobre</label>
+        </div>        
+    </fieldset>
+    <!-- <div class="col-12 text-center">
+        <button class="btn btn-success" type="submit">Personalizar tubulações</button>
+    </div> -->
+    <div class="col-12 text-center">
+        <button class="btn btn-success" type="submit">Calcular</button>
+    </div>
+  </form>
