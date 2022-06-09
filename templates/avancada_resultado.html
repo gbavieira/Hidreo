@@ -1,0 +1,58 @@
+<h1>Resultados Avançada</h1>
+
+<table>
+  <tr>
+    <td>Desnível:</td>
+    <td>{{form.desnivel.value}} <br /></td>
+  </tr>
+  <tr>
+    <td>Vazão:</td>
+    <td>{{form.vazao.value}} <br /></td>
+  </tr>
+  <tr>
+    <td>Distância Hidráulica: {{ dist_hidr }}</td>
+  </tr>
+  <tr>
+    <td>Distância Elétrica: {{ dist_eletrica }}</td>
+  </tr>
+  <tr>
+    <td>Modelo: {{ modelo }}</td>
+  </tr>
+  <tr>
+    <td>Tipo de Cabo: {{ tipo_cabo }}</td>
+  </tr>
+  <tr>
+    <td>Diâmetro Econômico: {{ diametro_econ }}</td>
+  </tr>
+  <tr>
+    <td>Diâmetro Comercial: {{ diametro_comercial }}</td>
+  </tr>
+  <tr>
+    <td>Velocidade do Escoamento: {{ vel_escoamento }}</td>
+  </tr>
+  <tr>
+    <td>Perda de Carga Unitária: {{ perda_carga_unit }}</td>
+  </tr>
+  <tr>
+    <td>Perda de Carga na Tubulação: {{ perda_carga_tub }}</td>
+  </tr>
+  <tr>
+    <td>Perda de Carga Total: {{ perda_carga_conex_total }}</td>
+  </tr>
+  <tr>
+    <td>Desnível Útil: {{ desnivel_real }}</td>
+  </tr>
+  <tr>
+    <td>Porcentagem da Perda: {{ porcentagem_perda }}</td>
+  </tr>
+  <tr>
+    <td>Quantidade de MCHs: {{ mchs }}</td>
+  </tr>
+  <tr>
+      <td>Quantidade de Potência: {{potencia}} W</td>
+  </tr>
+</table>
+
+<form>
+  <button><a href="{% url 'index' %}">Voltar</a></button>
+</form>

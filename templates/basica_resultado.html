@@ -1,0 +1,34 @@
+
+<h1>Resultados</h1>
+
+<table>
+  <tr>
+    <td>Nome:</td>
+    <td> {{ form.nome.value }} <br /></td>
+  </tr>
+    <tr>
+      <td>Desnível:</td>
+      <td> {{ form.desnivel.value }} <br /></td>
+    </tr>
+    <tr>
+      <td>Vazão:</td>
+      <td> {{ form.vazao.value }} <br /></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>Quantidade de MCHs: {{ mchs }}</td>
+    </tr>
+    <tr>
+        <td>Quantidade de Potência: {{ potencia }} W</td>
+    </tr>
+</table>
+
+<section>
+  <button><a href="{% url 'index' %}">Voltar Para o Início</a></button>
+  <button><a href="https://hidreo.com.br/">Voltar Para o Site</a></button>
+  <button><a href="{% url 'basica' %}">Calcularadora Básica</a></button>
+  <button><a href="{% url 'avancada' %}">Calcularadora Avançada</a></button>
+</section>
+

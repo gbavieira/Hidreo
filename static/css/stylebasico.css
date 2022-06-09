@@ -1,0 +1,161 @@
+.head-basic {
+    height: 37vh;
+    width: 100%;
+    background-color: rgb(34, 73, 131);
+    background-size: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 6rem;
+}
+
+.calculadora-basica {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+    background-color: rgb(64, 111, 180);
+    color: white;
+}
+
+.calculadora-advanced {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 110vh;
+    justify-content: space-around;
+    background-color: rgb(64, 111, 180);
+    color: white;
+}
+
+.text-label {
+    margin-top: 20px;
+}
+
+.input1 {
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.input1:hover {
+    background: rgb(22, 16, 95);
+}
+
+.input2 {
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.input2:hover {
+    background: rgb(22, 16, 95);
+}
+
+.input3 {
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.input3:hover {
+    background: rgb(22, 16, 95);
+}
+
+.input4 {
+    margin-top: 20px;
+    margin-left: 95px;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.input4:hover {
+    background: rgb(22, 16, 95);
+}
+
+.input5 {
+    margin-top: 20px;
+    margin-left: 82px;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 0.30s ease-in-out;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.input5:hover {
+    background: rgb(22, 16, 95);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radio-but {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+label {
+    position: relative;
+    border: 2px solid white;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+label:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: all 0.30s ease-in-out;
+}
+
+label:hover {
+    background: rgb(34, 73, 131);
+}
+
+input[type="radio"]:checked+label {
+    background-color: rgb(34, 73, 131);
+    color: white;
+}
+
+input[type="radio"]:checked+label:before {
+    height: 16px;
+    width: 16px;
+    border: 10px solid white;
+}

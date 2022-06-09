@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/_menu.html' %}
+
+<section class="head-basic">
+    <header>
+        <h1 class="border-gradient" id="box">
+            Calculadora HIDREO <br> Básica
+        </h1>
+    </header>
+</section>
+
+<hr size="2" width="100%">
+
+<section class="calculadora-basica">
+  <div class="text-label">
+    <h1 class="label"> Insira os dados abaixo para iniciar os cálculos</h1>
+  </div>
+  <form action="{% url 'basica' %}" method="POST">
+    {% csrf_token %}
+      <div>
+        <h3>Entre com o valor de Desnível</h3>
+          <input type="number" id="desnivel" step="0.1" class="form-control" name="desnivel" required>
+      </div>
+      <div>
+        <h3>Entre com o valor de Vazão</h3>
+          <input id="vazao" type="number" step="0.1" class="form-control" name="vazao" required>
+      </div>
+      <div>
+        <h3>Nome</h3>
+          <input id="nome" type="text" class="form-control" name="nome" required>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-success" type="submit">Calcular</button>
+      </div>
+  </form>
+</section>
+
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/_menu.html' %}
+
+<section class="head">
+    <header>
+        <h1 class="border-gradient" id="box">
+            Calculadora HIDREO
+        </h1>
+    </header>
+</section>
+
+<section class="info">
+    <div>
+        <h3 class="text1"> Seja bem-vindo a Calculadora de Potencial Hídrico da Hidreo <img class="calculadora" src="https://fretecomlucro.com.br/wp-content/uploads/Grupo-231.svg" alt="Calculadora"></h3>
+    </div>
+</section>
+
+<section class="presentation-text">
+
+    <div class="text-buttons">
+        <h1 class="text-calculators">Calculadoras</h1>
+        <h3> Escolha qual calculadora você quer utilizar</h3>
+    </div>
+
+</section>
+
+<section class="buttons">
+
+    <h3>Na calculadora BÁSICA você obtém o potencial do seu rio</h3>
+
+    <div class="basic-button">
+        <button type="button" class="btn btn-primary"><a href="{% url 'basica' %}">Básica</a></button>
+        <img src="https://play-lh.googleusercontent.com/POgn4x_Jrz18VxrjbZC88ijwZJwmOjs2flX1KC0Kz7IF1oncFoKOMsWfFKntJjc20BRJ" alt="basic-calculator" width="240px">
+    </div>
+
+
+    <h3>Na calculadora AVANÇADA você personaliza sua instalação</h3>
+
+    <div class="basic-button">
+        <button type="button" class="btn btn-primary"><a href="{% url 'avancada' %}">Avançada</a></button>
+        <img src="" alt="basic-calculator" width="240px">
+    </div>
+
+</section>
+
+
+    {% include 'partials/_footer.html' %}
+{% endblock %}

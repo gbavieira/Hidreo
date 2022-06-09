@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include 'partials/_menu.html' %}
+
+<section class="head-basic">
+    <header>
+        <h1 class="border-gradient" id="box">
+            Calculadora HIDREO <br> Básica
+        </h1>
+    </header>
+</section>
+
+<section class='container col-6'>
+    <form action="{% url 'basica' %}" method="post">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{field}}
+        </div>
+        
+        {% for error in field.errors %}
+        <section class="alert alert-danger" role="alert">
+            {{ field.errors }}
+        </section>
+        {% endfor %}
+        {% endfor %}
+        {% for field in pessoa_form.visible_fields %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Calcular" class='btn btn-success'>
+    </form>
+</section>
+
+{% endblock %}

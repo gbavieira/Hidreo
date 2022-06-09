@@ -1,14 +1,16 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .models import LeadBasica
+from .forms import LeadBasicaForms
 import math
 
 def index(request):
     return render(request,'index.html')
 
-def basica(request,desnivel=0,vazao=0):
+def basica (request):
+    form = LeadBasicaForms()
     if request.method == 'POST':
+        form = LeadBasicaForms(request.POST)
         nome = request.POST['nome']
         desnivel = math.floor(int(float(request.POST['desnivel'])))
         vazao = math.floor(int(float(request.POST['vazao'])))
@@ -22,19 +24,17 @@ def basica(request,desnivel=0,vazao=0):
         else:
             messages.error(request, 'Todos os campos são obrigatórios e não podem ficar em branco!')
             return redirect('basica')
-        print(desnivel, vazao, potencia, mchs)
+        
         lead = LeadBasica.objects.create(nome=nome,desnivel=desnivel, vazao=vazao,potencia=potencia,mchs=mchs)
         lead.save()
 
-        dados = {
-            'desnivel': desnivel,
-            'vazao':vazao,
-            'potencia':potencia,
-            'mchs':mchs,
-        }
-
+        dados = {'form':form,'potencia':potencia,'mchs':mchs,}
         return render(request,'basica_resultado.html', dados)
+
+    else:
+        form = LeadBasicaForms()
+        dados = {'form':form,}
+        return render(request,'basica_forms.html', dados)
     
-    return render(request,'basica.html')
     
 
