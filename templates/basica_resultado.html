@@ -1,5 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
 
-<h1>Resultados</h1>
+{% include 'partials/_menu.html' %}
 
 <table>
   <tr>
@@ -32,3 +34,6 @@
   <button><a href="{% url 'avancada' %}">Calcularadora Avançada</a></button>
 </section>
 
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

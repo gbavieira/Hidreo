@@ -8,13 +8,14 @@ class LeadAvancada(models.Model):
     # concessionaria = models.CharField(max_length = 50)
     data = models.DateTimeField(default=datetime.now, blank=True)
     # email = models.CharField(max_length = 50)
-    modelo = models.CharField(max_length = 50)
     desnivel = models.IntegerField()
     vazao = models.IntegerField()
     potencia = models.IntegerField()
     mchs = models.IntegerField()
     dist_hidr = models.IntegerField()
     dist_eletr = models.IntegerField()
+    modelo = models.CharField(max_length = 50)
+    tipo_cabo = models.CharField(max_length =50)
     def __str__(self):
         return self.nome
 

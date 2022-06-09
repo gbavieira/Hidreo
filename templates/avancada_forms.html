@@ -6,15 +6,15 @@
 <section class="head-basic">
     <header>
         <h1 class="border-gradient" id="box">
-            Calculadora HIDREO <br> Básica
+            Calculadora HIDREO <br> Avançada
         </h1>
     </header>
 </section>
 
 <section class='container col-6'>
-    <form action="{% url 'basica' %}" method="post">
+    <form action="{% url 'avancada' %}" method="post">
         {% csrf_token %}
-        {% for field in form.visible_fields %}
+        {% for field in form_avancada.visible_fields %}
         <div class="form-group">
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
             {{field}}
@@ -30,4 +30,5 @@
     </form>
 </section>
 
+{% include 'partials/_footer.html' %}
 {% endblock %}

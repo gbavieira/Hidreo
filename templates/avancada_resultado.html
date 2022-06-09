@@ -1,25 +1,29 @@
-<h1>Resultados Avançada</h1>
+{% extends "base.html" %}
+{% block content %}
 
+{% include 'partials/_menu.html' %}
+
+<section class='container col-6'>
 <table>
   <tr>
     <td>Desnível:</td>
-    <td>{{form.desnivel.value}} <br /></td>
+    <td>{{form_avancada.desnivel.value}} <br /></td>
   </tr>
   <tr>
     <td>Vazão:</td>
-    <td>{{form.vazao.value}} <br /></td>
+    <td>{{form_avancada.vazao.value}} <br /></td>
   </tr>
   <tr>
-    <td>Distância Hidráulica: {{ dist_hidr }}</td>
+    <td>Distância Hidráulica: {{ form_avancada.dist_hidr.value }}</td>
   </tr>
   <tr>
-    <td>Distância Elétrica: {{ dist_eletrica }}</td>
+    <td>Distância Elétrica: {{ form_avancada.dist_eletrica.value }}</td>
   </tr>
   <tr>
-    <td>Modelo: {{ modelo }}</td>
+    <td>Modelo: {{ form_avancada.modelo.value }}</td>
   </tr>
   <tr>
-    <td>Tipo de Cabo: {{ tipo_cabo }}</td>
+    <td>Tipo de Cabo: {{ form_avancada.tipo_cabo.value }}</td>
   </tr>
   <tr>
     <td>Diâmetro Econômico: {{ diametro_econ }}</td>
@@ -49,10 +53,18 @@
     <td>Quantidade de MCHs: {{ mchs }}</td>
   </tr>
   <tr>
-      <td>Quantidade de Potência: {{potencia}} W</td>
+      <td>Quantidade de Potência: {{pot_util}} W</td>
   </tr>
+  <tr>
+    <td>Bitola Recomendada: {{bitola_real}} mm²</td>
+</tr>
+<tr>
+  <td>Quantidade de Potência: {{pot_util}} W</td>
+</tr>
 </table>
+<button><a href="{% url 'index' %}">Voltar</a></button>
+</section>
 
-<form>
-  <button><a href="{% url 'index' %}">Voltar</a></button>
-</form>
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

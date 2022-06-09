@@ -1,5 +1,4 @@
 from django import forms
-from datetime import datetime
 from .validation import *
 from .models import LeadBasica
 
